@@ -3,16 +3,19 @@
 const Base = require("./base.js");
 
 /**
- * module defines a class for a Rectangle
+ * Class defines Rectangle shape
  * @param {number} width: defines rectangle width (private)
  * @param {number} height: defines rectangle height (private)
  * @param {number} x: defines horizontal coordinate (private)
  * @param {number} y: defines vertical coordinate (private)
  */
-
 class Rectangle extends Base {
+  #width;
+  #height;
+  #x;
+  #y;
   /**
-   * Class defines Rectangle shape
+   * Creates a Rectangle
    */
   constructor(width, height, x, y, id) {
     super(id);
@@ -23,17 +26,17 @@ class Rectangle extends Base {
       throw new Error("height cannot be null");
     }
     try {
-      this.width = width;
-      this.height = height;
+      this.#width = width;
+      this.#height = height;
       if (x == null) {
-        this.x = 0;
+        this.#x = 0;
       } else {
-        this.x = x;
+        this.#x = x;
       }
       if (y == null) {
-        this.y = 0;
+        this.#y = 0;
       } else {
-        this.y = y;
+        this.#y = y;
       }
     } catch (error) {
       console.log(error.message);
