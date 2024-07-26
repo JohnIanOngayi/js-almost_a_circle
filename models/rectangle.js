@@ -42,6 +42,98 @@ class Rectangle extends Base {
       console.log(error.message);
     }
   }
+
+  /**
+   * Sets value for private attribute width
+   * @param {number} value: new width
+   * if value isn't a number throw an error
+   */
+  set width(value) {
+    let n = parseInt(value);
+    if (n == undefined) {
+      throw new Error("width must be an int");
+    }
+    if (n <= 0) {
+      throw new Error("width must be positive int");
+    }
+    this.#width = value;
+  }
+
+  /**
+   * Sets value for private attribute height
+   * @param {number} value: new height
+   * if value isn't a number throw an error
+   */
+  set height(value) {
+    let n = parseInt(value);
+    if (n == undefined) {
+      throw new Error("height must be an int");
+    }
+    if (n <= 0) {
+      throw new Error("height must be positive int");
+    }
+    this.#height = value;
+  }
+
+  /**
+   * Sets value for private attribute x
+   * @param {number} value: new x
+   * if value isn't a number throw an error
+   */
+  set x(value) {
+    let n = parseInt(value);
+    if (n == undefined) {
+      throw new Error("x must be an int");
+    }
+    if (n <= 0) {
+      throw new Error("x must be positive int");
+    }
+    this.#x = value;
+  }
+
+  /**
+   * Sets value for private attribute y
+   * @param {number} value: new y
+   * if value isn't a number throw an error
+   */
+  set y(value) {
+    let n = parseInt(value);
+    if (n == undefined) {
+      throw new Error("y must be an int");
+    }
+    if (n <= 0) {
+      throw new Error("y must be positive int");
+    }
+    this.#y = value;
+  }
+
+  /**
+   * Returns value of private atribute width
+   */
+  get width() {
+    return this.#width;
+  }
+
+  /**
+   * Returns value of private atribute height
+   */
+  get height() {
+    return this.#height;
+  }
+
+  /**
+   * Returns value of private atribute x
+   */
+  get x() {
+    return this.#x;
+  }
+
+  /**
+   * Returns value of private atribute width
+   */
+  get y() {
+    return this.#y;
+  }
 }
 
 module.exports = Rectangle;
