@@ -134,6 +134,13 @@ class Rectangle extends Base {
   get y() {
     return this.#y;
   }
+
+  /**
+   * Returns area of rectangle
+   */
+  area = () => {
+    return this.#width * this.#height;
+  };
 }
 
 module.exports = Rectangle;
