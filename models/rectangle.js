@@ -149,7 +149,7 @@ class Rectangle extends Base {
     for (let _h = 0; _h < this.#height; _h++) {
       console.log(" ".repeat(this.#x) + "#".repeat(this.#width));
     }
-    for (let _y = 0; _y, this.#y; _y++) {
+    for (let _y = 0; _y < this.#y; _y++) {
       console.log();
     }
   }
@@ -159,7 +159,8 @@ class Rectangle extends Base {
    */
   describe() {
     let info = {
-      type: "Rectangle",
+      type: Rectangle,
+      id: this.id,
       width: this.#width,
       height: this.#height,
       x: this.#x,
@@ -167,6 +168,27 @@ class Rectangle extends Base {
       area: this.area(),
     };
     console.log(info);
+  }
+
+  /**
+   * Updates Rectangle by using an array or a dictionary
+   * @param {array} args list with values for updating
+   * @param {dictionary} kwargs key, values for updatng
+   */
+  update(kwargs = null, ...args) {
+    if (kwargs == null) {
+      const prop = [this.id, this.width, this.height, this.x, this.y];
+      for (let a = 0; a < args.length; a++) {
+        prop[a] = args[a];
+      }
+      [this.id, this.width, this.height, this.x, this.y] = prop;
+    } else {
+      Object.entries(kwargs).forEach(([key, value]) => {
+        if (this.hasOwnProperty(key)) {
+          this[key] = value;
+        }
+      });
+    }
   }
 }
 
