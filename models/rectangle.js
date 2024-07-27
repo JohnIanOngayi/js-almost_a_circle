@@ -141,6 +141,18 @@ class Rectangle extends Base {
   area = () => {
     return this.#width * this.#height;
   };
+
+  /**
+   * Prints i the rectangle instance using `#`
+   */
+  display() {
+    for (let _h = 0; _h < this.#height; _h++) {
+      console.log(" ".repeat(this.#x) + "#".repeat(this.#width));
+    }
+    for (let _y = 0; _y, this.#y; _y++) {
+      console.log();
+    }
+  }
 }
 
 module.exports = Rectangle;
