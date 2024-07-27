@@ -153,6 +153,21 @@ class Rectangle extends Base {
       console.log();
     }
   }
+
+  /**
+   * Returns a string like python's __str__
+   */
+  describe() {
+    let info = {
+      type: "Rectangle",
+      width: this.#width,
+      height: this.#height,
+      x: this.#x,
+      y: this.#y,
+      area: this.area(),
+    };
+    console.log(info);
+  }
 }
 
 module.exports = Rectangle;
